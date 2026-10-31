@@ -1,0 +1,18 @@
+node_modules/
+dist/
+release/
+release-lite/
+.venv/
+shots/
+*.log
+test-speech.wav
+test-16k.wav
+public/test-16k.wav
+.DS_Store
+.env
+.env.*
+
+# Local build tooling; the packaged runtime lives in tools/whisper/runtime
+tools/whisper/bin/
+tools/whisper/*.zip
+tools/whisper/ggml-*.bin

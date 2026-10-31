@@ -1,0 +1,8 @@
+import { createRoot } from 'react-dom/client'
+import '@fontsource/instrument-serif/400.css'
+import '@fontsource/instrument-serif/400-italic.css'
+import '@fontsource-variable/instrument-sans'
+import { Overlay } from './OverlayView'
+import './styles.css'
+
+createRoot(document.getElementById('root')!).render(<Overlay />)

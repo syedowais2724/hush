@@ -1,0 +1,48 @@
+appId: app.hush.dictation
+productName: Hush
+copyright: Copyright © 2026 Hush
+
+directories:
+  output: release
+  buildResources: assets
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - assets/icon.png
+  - assets/tray.png
+  - package.json
+  - node_modules/koffi/**/*
+  - node_modules/@koromix/**/*
+  - node_modules/uiohook-napi/**/*
+
+asarUnpack:
+  - node_modules/@koromix/**/*
+  - node_modules/uiohook-napi/**/*
+
+asar: true
+npmRebuild: false
+
+extraResources:
+  - from: tools/whisper/runtime
+    to: whisper
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  icon: assets/icon.ico
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Hush
+  artifactName: Hush-Setup-${version}.${ext}
+
+portable:
+  artifactName: Hush-${version}-portable.${ext}
